@@ -1,0 +1,606 @@
+/* BusinessDashboard.css - Mobile-First Responsive Design */
+.business-dashboard-theme {
+    --business-primary: #1e40af;
+    --business-primary-light: #3b82f6;
+    --business-background: #f8fafc;
+    --business-background-start: #f1f5f9;
+    --business-background-end: #e2e8f0;
+    --business-card-bg: #ffffff;
+    --business-text-dark: #1e293b;
+    --business-text-light: #64748b;
+    --business-border-color: #e2e8f0;
+    --business-sidebar-width: 280px;
+    --business-sidebar-mobile-width: 60px;
+    --business-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --business-shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    width: 100%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, var(--business-background-start), var(--business-background-end));
+    overflow: hidden;
+}
+
+/* Mobile-first Sidebar Styles */
+.business-dashboard-theme .sidebar {
+    width: var(--business-sidebar-mobile-width);
+    height: 100vh;
+    background: var(--business-card-bg);
+    border-right: 1px solid var(--business-border-color);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--business-shadow);
+}
+
+.business-dashboard-theme .sidebar-header {
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid var(--business-border-color);
+    text-align: center;
+}
+
+.business-dashboard-theme .sidebar-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--business-primary);
+    display: none;
+    /* Hidden on mobile by default */
+}
+
+.business-dashboard-theme .business-type {
+    font-size: 0.75rem;
+    color: var(--business-text-light);
+    margin: 0.25rem 0 0 0;
+    display: none;
+    /* Hidden on mobile by default */
+}
+
+.business-dashboard-theme .sidebar-nav {
+    flex: 1;
+    padding: 1rem 0;
+    margin: 0.2rem 0;
+}
+
+.business-dashboard-theme .sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.business-dashboard-theme .sidebar-nav li {
+    margin-bottom: 0.25rem;
+}
+
+.business-dashboard-theme .sidebar-nav button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    padding: 0.75rem;
+    background: transparent;
+    border: none;
+    color: var(--business-text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center !important;
+    border-radius: 8px;
+    margin: 0 0.25rem;
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+.business-dashboard-theme .sidebar-nav button:hover {
+    background-color: rgba(30, 64, 175, 0.1);
+}
+
+.business-dashboard-theme .sidebar-nav li.active button {
+    background-color: rgba(30, 64, 175, 0.2);
+    border-left: none;
+    border: 2px solid var(--business-primary);
+}
+
+.business-dashboard-theme .sidebar-nav button span {
+    margin-left: 0.5rem;
+    display: none;
+    /* Hidden on mobile by default */
+}
+
+.business-dashboard-theme .sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid var(--business-border-color);
+}
+
+.business-dashboard-theme .logout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem;
+    background: transparent;
+    border: none;
+    color: var(--business-text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    min-height: 44px;
+    touch-action: manipulation;
+}
+
+.business-dashboard-theme .logout-button:hover {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+}
+
+.business-dashboard-theme .logout-button span {
+    margin-left: 0.5rem;
+    display: none;
+    /* Hidden on mobile by default */
+}
+
+/* Main Content Styles - Mobile First */
+.business-dashboard-theme .dashboard-container {
+    display: flex;
+}
+
+.business-dashboard-theme .dashboard-main {
+    margin-left: var(--business-sidebar-mobile-width);
+    width: calc(100% - var(--business-sidebar-mobile-width));
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.business-dashboard-theme .dashboard-header {
+    background: var(--business-card-bg);
+    padding: 1rem;
+    border-bottom: 1px solid var(--business-border-color);
+    box-shadow: var(--business-shadow);
+}
+
+.business-dashboard-theme .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+}
+
+.business-dashboard-theme .header-content h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--business-text-dark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 60%;
+}
+
+.business-dashboard-theme .header-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.business-dashboard-theme .business-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--business-primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+    overflow: hidden;
+    box-shadow: var(--business-shadow);
+}
+
+.business-dashboard-theme .main-content {
+    flex: 1;
+    overflow-y: auto;
+    background: var(--business-background);
+}
+
+.business-dashboard-theme .loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 1rem;
+    color: var(--business-text-light);
+}
+
+.business-dashboard-theme .loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--business-border-color);
+    border-top: 3px solid var(--business-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Dashboard Content Styles - Mobile First */
+.business-dashboard-theme .dashboard-content {
+    padding: 1rem;
+}
+
+.business-dashboard-theme .welcome-section {
+    margin-bottom: 1.5rem;
+}
+
+.business-dashboard-theme .welcome-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--business-text-dark);
+}
+
+.business-dashboard-theme .welcome-header p {
+    color: var(--business-text-light);
+    margin-bottom: 1rem;
+}
+
+.business-dashboard-theme .stats-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.business-dashboard-theme .stat-card {
+    background: var(--business-card-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--business-shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.business-dashboard-theme .stat-card:hover {
+    box-shadow: var(--business-shadow-hover);
+    transform: translateY(-1px);
+}
+
+.business-dashboard-theme .stat-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(30, 64, 175, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--business-primary);
+}
+
+.business-dashboard-theme .stat-info h3 {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--business-text-light);
+    margin: 0 0 0.25rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.business-dashboard-theme .stat-value {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--business-text-dark);
+    margin: 0;
+}
+
+.business-dashboard-theme .recent-activity {
+    background: var(--business-card-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--business-shadow);
+}
+
+.business-dashboard-theme .recent-activity h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--business-text-dark);
+    margin-bottom: 1rem;
+}
+
+.business-dashboard-theme .activity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.business-dashboard-theme .activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--business-border-color);
+}
+
+.business-dashboard-theme .activity-item:last-child {
+    border-bottom: none;
+}
+
+.business-dashboard-theme .activity-icon {
+    width: 32px;
+    height: 32px;
+    background: rgba(30, 64, 175, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--business-primary);
+    flex-shrink: 0;
+}
+
+.business-dashboard-theme .activity-content p {
+    margin: 0 0 0.25rem 0;
+    font-size: 0.9rem;
+    color: var(--business-text-dark);
+}
+
+.business-dashboard-theme .activity-time {
+    font-size: 0.75rem;
+    color: var(--business-text-light);
+}
+
+/* Responsive Design - Tablet and Small Desktop */
+@media (min-width: 320px) and (max-width: 575px) {
+    .business-dashboard-theme .header-content h2 {
+        font-size: 0.9rem;
+        max-width: 50%;
+    }
+
+    .business-dashboard-theme .business-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+    }
+
+    .business-dashboard-theme .welcome-header h1 {
+        font-size: 1.25rem;
+    }
+
+    .business-dashboard-theme .stat-card {
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .business-dashboard-theme .stat-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .business-dashboard-theme .stat-value {
+        font-size: 1.1rem;
+    }
+}
+
+/* Small Tablet */
+@media (min-width: 576px) and (max-width: 767px) {
+    .business-dashboard-theme .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .business-dashboard-theme .header-content h2 {
+        font-size: 1.1rem;
+        max-width: 65%;
+    }
+}
+
+/* Medium Tablet */
+@media (min-width: 768px) and (max-width: 991px) {
+    .business-dashboard-theme .sidebar {
+        width: var(--business-sidebar-width);
+    }
+
+    .business-dashboard-theme .sidebar-header h3,
+    .business-dashboard-theme .business-type,
+    .business-dashboard-theme .sidebar-nav button span,
+    .business-dashboard-theme .logout-button span {
+        display: block;
+    }
+
+    .business-dashboard-theme .sidebar-nav button {
+        justify-content: flex-start;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .business-dashboard-theme .sidebar-header {
+        text-align: left;
+        padding: 1.5rem 2rem;
+    }
+
+    .business-dashboard-theme .dashboard-main {
+        margin-left: var(--business-sidebar-width);
+        width: calc(100% - var(--business-sidebar-width));
+    }
+
+    .business-dashboard-theme .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .business-dashboard-theme .header-content h2 {
+        font-size: 1.1rem;
+        max-width: 70%;
+    }
+
+    .business-dashboard-theme .business-avatar {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .business-dashboard-theme .main-content {
+        padding: 1.5rem;
+    }
+
+    .business-dashboard-theme .welcome-section {
+        padding: 1.5rem;
+    }
+
+    .business-dashboard-theme .welcome-header h1 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Large Tablet and Small Desktop */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .business-dashboard-theme .sidebar {
+        width: var(--business-sidebar-width);
+    }
+
+    .business-dashboard-theme .sidebar-header h3,
+    .business-dashboard-theme .business-type,
+    .business-dashboard-theme .sidebar-nav button span,
+    .business-dashboard-theme .logout-button span {
+        display: block;
+    }
+
+    .business-dashboard-theme .sidebar-nav button {
+        justify-content: flex-start;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .business-dashboard-theme .sidebar-header {
+        text-align: left;
+        padding: 1.5rem 2rem;
+    }
+
+    .business-dashboard-theme .dashboard-main {
+        margin-left: var(--business-sidebar-width);
+        width: calc(100% - var(--business-sidebar-width));
+    }
+
+    .business-dashboard-theme .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .business-dashboard-theme .header-content h2 {
+        font-size: 1.15rem;
+        max-width: none;
+    }
+
+    .business-dashboard-theme .business-avatar {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+
+    .business-dashboard-theme .main-content {
+        padding: 1.75rem;
+    }
+
+    .business-dashboard-theme .welcome-section {
+        padding: 1.75rem;
+    }
+
+    .business-dashboard-theme .welcome-header h1 {
+        font-size: 1.875rem;
+    }
+
+    .business-dashboard-theme .stat-card {
+        padding: 1.15rem;
+        gap: 0.875rem;
+    }
+
+    .business-dashboard-theme .stat-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .business-dashboard-theme .stat-value {
+        font-size: 1.375rem;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .business-dashboard-theme .sidebar {
+        width: var(--business-sidebar-width);
+    }
+
+    .business-dashboard-theme .sidebar-header h3,
+    .business-dashboard-theme .business-type,
+    .business-dashboard-theme .sidebar-nav button span,
+    .business-dashboard-theme .logout-button span {
+        display: block;
+    }
+
+    .business-dashboard-theme .sidebar-nav button {
+        justify-content: flex-start;
+        padding: 0.75rem 1.5rem;
+    }
+
+    .business-dashboard-theme .sidebar-header {
+        text-align: left;
+        padding: 1.28rem 2rem;
+    }
+
+    .business-dashboard-theme .dashboard-main {
+        margin-left: var(--business-sidebar-width);
+        width: calc(100% - var(--business-sidebar-width));
+    }
+
+    .business-dashboard-theme .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .business-dashboard-theme .main-content {
+        padding: 2rem;
+    }
+
+    .business-dashboard-theme .welcome-section {
+        padding: 2rem;
+    }
+
+    .business-dashboard-theme .welcome-header h1 {
+        font-size: 2rem;
+    }
+
+    .business-dashboard-theme .header-content h2 {
+        font-size: 1.2rem;
+        max-width: none;
+    }
+
+    .business-dashboard-theme .business-avatar {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .business-dashboard-theme .stat-card {
+        padding: 1.25rem;
+        gap: 1rem;
+    }
+
+    .business-dashboard-theme .stat-icon {
+        width: 48px;
+        height: 48px;
+    }
+
+    .business-dashboard-theme .stat-info h3 {
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .business-dashboard-theme .stat-value {
+        font-size: 1.5rem;
+    }
+}
