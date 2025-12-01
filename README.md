@@ -128,13 +128,3 @@ UdhyogUnity is a platform dedicated to connecting cities through local businesse
 ## 📝 License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-## 📞 Contact
-
-Harsh Parmar - [harshparmar.dev.com](mailto:harshparmar.dev.com)
-Linkedin - [https://www.linkedin.com/in/harsh308050/](https://www.linkedin.com/in/harsh308050/)
-Project Link: [https://github.com/harsh308050/UdhyogUnity](https://github.com/harsh308050/UdhyogUnity)
-
----
-
-Made with ❤️ by Harsh Parmar
